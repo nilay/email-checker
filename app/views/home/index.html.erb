@@ -1,0 +1,37 @@
+<div style="margin: auto; width: 50%; padding: 10px;">
+<h1>E-Mail Validator</h1>
+
+  <% flash.each do |type, msg| %>
+      <div class="alert alert-info">
+        <%= msg %>
+      </div>
+  <% end %>
+
+  <div class="row">
+    <div class="col-12">
+      <form method="post">
+        <p class="colorgraph"><br>
+          <label for="username" class="control-label"><b>First name</b></label>
+          <input type="text" class="form-control" name="first_name" />
+          <label for="username" class="control-label"><b>Last name</b></label>
+          <input type="text" class="form-control" name="last_name" />
+          <label for="username" class="control-label"><b>URL</b></label>
+          <input type="text" class="form-control" name="url" />
+          <br>
+          <button style="width: 100%; height: 40px;" class="btn-outline-primary" name="Submit" value="Login" type="Submit">Search</button>
+
+        </p>
+      </form>
+    </div>
+  </div>
+
+
+  <!-- list of emails -->
+  <h2>Results</h2>
+  <ul>
+    <% @records.each do |record| %>
+      <li><%=record.email%>&nbsp; ( <%=record.full_name%> )</li>
+    <%end%>
+  </ul>
+
+</div>
